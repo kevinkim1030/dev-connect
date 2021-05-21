@@ -1,7 +1,7 @@
 // Make sure to add profile reducer to 'root reducer' aka index.js
 // actions get profile/create/update/clear from state
 
-import { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE } from "../actions/types";
+import { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE, UPDATE_PROFILE } from "../actions/types";
 
 // create initial state
 const initialState = {
@@ -21,6 +21,7 @@ export default function(state = initialState, action) {
 
   switch(type) {
     case GET_PROFILE:
+    case UPDATE_PROFILE:
       return {
         ...state,
         profile: payload,
