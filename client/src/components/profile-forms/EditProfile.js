@@ -48,7 +48,7 @@ const EditProfile = ({
     });
     // with useEffect it will keep reloading so put the prop to depend on within brackets
     // if it loads - it will run
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
 
   const {
     company,
