@@ -1,7 +1,14 @@
 // Make sure to add profile reducer to 'root reducer' aka index.js
 // actions get profile/create/update/clear from state
 
-import { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE, UPDATE_PROFILE } from "../actions/types";
+import { 
+  GET_PROFILE, 
+  GET_PROFILES, 
+  PROFILE_ERROR, 
+  CLEAR_PROFILE, 
+  UPDATE_PROFILE,
+  GET_REPOS
+} from "../actions/types";
 
 // create initial state
 const initialState = {
@@ -27,6 +34,12 @@ export default function(state = initialState, action) {
         profile: payload,
         loading: false
       };
+    case GET_PROFILES:
+      return {
+        ...state,
+        profiles: payload,
+        loading: false
+      };
     case PROFILE_ERROR:
       return {
         ...state,
@@ -40,6 +53,12 @@ export default function(state = initialState, action) {
         repos: [],
         loading: false
       }
+    case GET_REPOS:
+      return {
+        ...state,
+        repos: payload,
+        loading: false
+      };
     default:
       return state;
   }
