@@ -6,8 +6,8 @@ import {
   GET_PROFILES,
   PROFILE_ERROR,
   UPDATE_PROFILE,
-  ACCOUNT_DELETED,
   CLEAR_PROFILE,
+  ACCOUNT_DELETED,
   GET_REPOS
 } from './types';
 
@@ -54,7 +54,7 @@ export const getProfiles = () => async dispatch => {
 
 
 // Get profile by ID
-export const getProfilesById = userId => async dispatch => {
+export const getProfileById = userId => async dispatch => {
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
